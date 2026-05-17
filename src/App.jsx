@@ -93,8 +93,8 @@ globalStyle.textContent = `
 
   .upload-btn {
     width: 100%; background: transparent;
-    border: 1px dashed #2a5a3a; border-radius: 10px;
-    color: #6aaa80; padding: 14px 16px; font-size: 12px;
+    border: 1px dashed #1e3a2f; border-radius: 10px;
+    color: #4a7c59; padding: 14px 16px; font-size: 12px;
     font-family: 'JetBrains Mono', monospace; letter-spacing: .5px;
     cursor: pointer; display: flex; align-items: center;
     justify-content: center; gap: 8px; margin-bottom: 14px;
@@ -110,18 +110,18 @@ globalStyle.textContent = `
   }
 
   .resume-textarea {
-    width: 100%; background: #0d1f17;
-    border: 1px solid #1a3d28; border-radius: 10px;
-    padding: 14px 16px; color: #a8d4b8; font-size: 12px;
+    width: 100%; background: #050c14;
+    border: 1px solid #0f2137; border-radius: 10px;
+    padding: 14px 16px; color: #8ab4a0; font-size: 12px;
     font-family: 'JetBrains Mono', monospace; line-height: 1.7;
     resize: vertical; outline: none;
     transition: border-color .2s, box-shadow .2s;
   }
   .resume-textarea:focus {
-    border-color: #00ff9d66;
-    box-shadow: 0 0 0 3px #00ff9d14;
+    border-color: #00ff9d44;
+    box-shadow: 0 0 0 3px #00ff9d0a;
   }
-  .resume-textarea::placeholder { color: #2e6644; }
+  .resume-textarea::placeholder { color: #1e3a2f; }
 
   .pill {
     display: inline-block; border-radius: 99px;
@@ -229,8 +229,8 @@ function Spin() {
 
 function Label({ children }) {
   return (
-    <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, fontWeight: 700, letterSpacing: 3, color: "#3a9e68", textTransform: "uppercase", marginBottom: 10, display: "flex", alignItems: "center", gap: 8 }}>
-      <span style={{ display: "inline-block", width: 18, height: 1, background: "#3a9e68" }} />
+    <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, fontWeight: 700, letterSpacing: 3, color: "#1e5c3a", textTransform: "uppercase", marginBottom: 10, display: "flex", alignItems: "center", gap: 8 }}>
+      <span style={{ display: "inline-block", width: 18, height: 1, background: "#1e5c3a" }} />
       {children}
     </div>
   );
@@ -279,10 +279,10 @@ function SectionBar({ label, value }) {
   return (
     <div style={{ marginBottom: 12 }}>
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 5 }}>
-        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#7abf96", textTransform: "capitalize", letterSpacing: .5 }}>{label}</span>
+        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#4a7c59", textTransform: "capitalize", letterSpacing: .5 }}>{label}</span>
         <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: c, fontWeight: 700 }}>{value}<span style={{ color: "#1e3a2f" }}>/10</span></span>
       </div>
-      <div style={{ height: 3, borderRadius: 99, background: "#1a3d28", overflow: "hidden" }}>
+      <div style={{ height: 3, borderRadius: 99, background: "#0a1a10", overflow: "hidden" }}>
         <div className="section-bar-fill" style={{ width: `${value * 10}%`, background: `linear-gradient(90deg, ${c}88, ${c})`, boxShadow: `0 0 8px ${c}66` }} />
       </div>
     </div>
@@ -296,7 +296,7 @@ function BulletList({ items, color }) {
       {items.map((it, i) => (
         <li key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
           <span style={{ color, fontFamily: "'JetBrains Mono', monospace", fontSize: 12, flexShrink: 0, marginTop: 1 }}>{">"}</span>
-          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#9fd4b4", lineHeight: 1.7 }}>{it}</span>
+          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#6a9a7a", lineHeight: 1.7 }}>{it}</span>
         </li>
       ))}
     </ul>
@@ -384,12 +384,12 @@ export default function App() {
       <div style={{ position: "fixed", top: -200, left: -200, width: 600, height: 600, borderRadius: "50%", background: "radial-gradient(circle, #00ff9d08 0%, transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
       <div style={{ position: "fixed", bottom: -200, right: -200, width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, #00d4ff06 0%, transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
-      <div style={{ position: "relative", zIndex: 2, maxWidth: 1400, margin: "0 auto", padding: "48px 32px 80px" }}>
+      <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", padding: "48px 24px 80px" }}>
 
         {/* ── Header ── */}
         <div className="fade-up" style={{ textAlign: "center", marginBottom: 56 }}>
           {/* Terminal prompt */}
-          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#3a9e68", letterSpacing: 2, marginBottom: 16 }}>
+          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#1e5c3a", letterSpacing: 2, marginBottom: 16 }}>
             <span style={{ color: "#00ff9d" }}>$</span> ./resumeiq --analyze --mode=pro
             <span style={{ animation: "blink 1s step-end infinite", color: "#00ff9d" }}>|</span>
           </div>
@@ -406,7 +406,7 @@ export default function App() {
             ResumeIQ
           </h1>
 
-          <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 13, color: "#4aae78", letterSpacing: 1 }}>
+          <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 13, color: "#2a6644", letterSpacing: 1 }}>
             ATS_SCORE &nbsp;/&nbsp; CAREER_INSIGHTS &nbsp;/&nbsp; AI_ANALYSIS
           </p>
 
@@ -419,23 +419,23 @@ export default function App() {
         </div>
 
         {/* ── Main Grid ── */}
-        <div style={{ display: "grid", gridTemplateColumns: result ? "1fr 1.5fr" : "minmax(0, 720px)", gap: 20, justifyContent: "center", alignItems: "start" }}>
+        <div style={{ display: "grid", gridTemplateColumns: result ? "1fr 1.5fr" : "minmax(0, 600px)", gap: 20, justifyContent: "center", alignItems: "start" }}>
 
           {/* ── INPUT PANEL ── */}
           <div className="fade-up fade-up-1 card-hover" style={{
-            background: "linear-gradient(145deg, #0d1f17, #0a1a12)",
-            border: "1px solid #1a3d28", borderRadius: 16,
+            background: "linear-gradient(145deg, #050d0a, #030a07)",
+            border: "1px solid #0f2a1a", borderRadius: 16,
             padding: 28, boxShadow: "0 8px 48px rgba(0,0,0,.6)",
           }}>
 
             {/* Panel header */}
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 24, paddingBottom: 16, borderBottom: "1px solid #1a3d28" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 24, paddingBottom: 16, borderBottom: "1px solid #0f2a1a" }}>
               <div style={{ display: "flex", gap: 6 }}>
                 <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#f87171" }} />
                 <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#f59e0b" }} />
                 <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#00ff9d" }} />
               </div>
-              <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#3a9e68", letterSpacing: 2, marginLeft: 8 }}>INPUT.tsx</span>
+              <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#1e5c3a", letterSpacing: 2, marginLeft: 8 }}>INPUT.tsx</span>
               <div style={{ marginLeft: "auto", width: 8, height: 8, borderRadius: "50%", background: "#00ff9d", boxShadow: "0 0 6px #00ff9d", animation: "pulse-ring 2s ease-out infinite" }} />
             </div>
 
@@ -471,7 +471,7 @@ export default function App() {
             {error && (
               <div style={{
                 marginTop: 14, padding: "10px 14px", borderRadius: 8,
-                background: "#f8717114", border: "1px solid #f8717155",
+                background: "#f8717108", border: "1px solid #f8717133",
                 fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#f87171",
                 lineHeight: 1.5,
               }}>{error}</div>
@@ -495,37 +495,37 @@ export default function App() {
           {/* ── RESULTS PANEL ── */}
           {result && (
             <div className="fade-up fade-up-2 card-hover" style={{
-              background: "linear-gradient(145deg, #0d1f17, #0a1a12)",
-              border: "1px solid #1a3d28", borderRadius: 16,
+              background: "linear-gradient(145deg, #050d0a, #030a07)",
+              border: "1px solid #0f2a1a", borderRadius: 16,
               padding: 28, boxShadow: "0 8px 48px rgba(0,0,0,.6)",
             }}>
 
               {/* Panel header */}
-              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 24, paddingBottom: 16, borderBottom: "1px solid #1a3d28" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 24, paddingBottom: 16, borderBottom: "1px solid #0f2a1a" }}>
                 <div style={{ display: "flex", gap: 6 }}>
                   <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#f87171" }} />
                   <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#f59e0b" }} />
                   <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#00ff9d" }} />
                 </div>
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#3a9e68", letterSpacing: 2, marginLeft: 8 }}>ANALYSIS.output</span>
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#1e5c3a", letterSpacing: 2, marginLeft: 8 }}>ANALYSIS.output</span>
               </div>
 
               {/* Score + recommendation */}
               <div style={{ display: "flex", alignItems: "center", gap: 28, marginBottom: 28, flexWrap: "wrap" }}>
                 <ScoreDial score={result.ats_score} />
                 <div style={{ flex: 1, minWidth: 180 }}>
-                  <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, color: "#3a9e68", letterSpacing: 3, textTransform: "uppercase", marginBottom: 10 }}>
+                  <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, color: "#1e5c3a", letterSpacing: 3, textTransform: "uppercase", marginBottom: 10 }}>
                     -- hiring_signal
                   </div>
                   <RecBadge rec={result.recommendation} />
-                  <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#7abf96", marginTop: 12, lineHeight: 1.8 }}>
-                    <span style={{ color: "#3a9e68" }}>// </span>{result.score_reason}
+                  <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#2a6644", marginTop: 12, lineHeight: 1.8 }}>
+                    <span style={{ color: "#1e5c3a" }}>// </span>{result.score_reason}
                   </p>
                 </div>
               </div>
 
               {/* Tab bar */}
-              <div style={{ display: "flex", borderBottom: "1px solid #1a3d28", marginBottom: 24, overflowX: "auto" }}>
+              <div style={{ display: "flex", borderBottom: "1px solid #0f2a1a", marginBottom: 24, overflowX: "auto" }}>
                 {TABS.map(t => (
                   <button key={t} className="tab-btn" onClick={() => setTab(t)} style={{
                     color: tab === t ? "#00ff9d" : "#1e5c3a",
@@ -564,13 +564,13 @@ export default function App() {
                       ? result.missing_skills.map((s, i) => (
                           <span key={i} className="pill" style={{ background: "#f59e0b18", color: "#f59e0b", border: "1px solid #f59e0b33" }}>{s}</span>
                         ))
-                      : <p style={{ fontFamily: "'JetBrains Mono', monospace", color: "#4aae78", fontSize: 12 }}>// none detected</p>}
+                      : <p style={{ fontFamily: "'JetBrains Mono', monospace", color: "#1e5c3a", fontSize: 12 }}>// none detected</p>}
                   </div>
                   <Label>Final Recommendation</Label>
-                  <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#9fd4b4", lineHeight: 1.9 }}>
-                    <span style={{ color: "#3a9e68" }}>/** </span>
+                  <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#4a7c59", lineHeight: 1.9 }}>
+                    <span style={{ color: "#1e5c3a" }}>/** </span>
                     {result.recommendation_reason}
-                    <span style={{ color: "#3a9e68" }}> */</span>
+                    <span style={{ color: "#1e5c3a" }}> */</span>
                   </p>
                 </div>
               )}
@@ -584,7 +584,7 @@ export default function App() {
                       ? result.keyword_density.present.map((k, i) => (
                           <span key={i} className="pill" style={{ background: "#00ff9d18", color: "#00ff9d", border: "1px solid #00ff9d33" }}>{k}</span>
                         ))
-                      : <p style={{ fontFamily: "'JetBrains Mono', monospace", color: "#4aae78", fontSize: 12 }}>// none found</p>}
+                      : <p style={{ fontFamily: "'JetBrains Mono', monospace", color: "#1e5c3a", fontSize: 12 }}>// none found</p>}
                   </div>
                   <Label>Keywords Absent</Label>
                   <div>
@@ -592,7 +592,7 @@ export default function App() {
                       ? result.keyword_density.absent.map((k, i) => (
                           <span key={i} className="pill" style={{ background: "#f8717118", color: "#f87171", border: "1px solid #f8717133" }}>{k}</span>
                         ))
-                      : <p style={{ fontFamily: "'JetBrains Mono', monospace", color: "#4aae78", fontSize: 12 }}>// full coverage</p>}
+                      : <p style={{ fontFamily: "'JetBrains Mono', monospace", color: "#1e5c3a", fontSize: 12 }}>// full coverage</p>}
                   </div>
                 </div>
               )}
@@ -612,15 +612,15 @@ export default function App() {
         {/* ── Footer ── */}
         <div className="fade-up fade-up-3" style={{ textAlign: "center", marginTop: 60 }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12, marginBottom: 14 }}>
-            <div style={{ height: 1, width: 60, background: "linear-gradient(90deg, transparent, #1a3d28)" }} />
-            <div style={{ width: 4, height: 4, borderRadius: "50%", background: "#3a9e68" }} />
-            <div style={{ height: 1, width: 60, background: "linear-gradient(90deg, #1a3d28, transparent)" }} />
+            <div style={{ height: 1, width: 60, background: "linear-gradient(90deg, transparent, #0f2a1a)" }} />
+            <div style={{ width: 4, height: 4, borderRadius: "50%", background: "#1e5c3a" }} />
+            <div style={{ height: 1, width: 60, background: "linear-gradient(90deg, #0f2a1a, transparent)" }} />
           </div>
-          <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#4aae78", letterSpacing: 1 }}>
+          <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#1e5c3a", letterSpacing: 1 }}>
             made with <span style={{ color: "#f87171" }}>&hearts;</span> by{" "}
             <span style={{ color: "#00ff9d", fontWeight: 700, textShadow: "0 0 12px #00ff9d66" }}>Pratishtha</span>
           </p>
-          <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, color: "#2a5a3a", letterSpacing: 2, marginTop: 6 }}>
+          <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, color: "#0f2a1a", letterSpacing: 2, marginTop: 6 }}>
             v2.0.0 -- powered by groq llama-3.3-70b
           </p>
         </div>
