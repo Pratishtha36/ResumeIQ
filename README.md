@@ -66,15 +66,6 @@ npm run dev
 
 Then open the Vite app in your browser at the address shown in the terminal, typically `http://localhost:5173`.
 
-## Notes
-
-- Do not commit `.env` to GitHub. It is already ignored by `.gitignore`.
-- Your friend must create their own `backend/.env` file with a valid `GROQ_API_KEY` to run the project locally.
-
-## Troubleshooting
-
-- If the app returns `MISSING` or an authorization error, verify that `backend/.env` contains `GROQ_API_KEY` and the backend was restarted after updating the file.
-- Confirm the frontend is allowed by CORS and is using the correct `http://localhost:5173` origin.
 
 ## Future improvements
 
